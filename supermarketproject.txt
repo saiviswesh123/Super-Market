@@ -1,0 +1,1166 @@
+package supermarket;
+import java.util.Scanner;
+public class SuperMarket 
+{
+	static Scanner option=new Scanner(System.in);
+	
+	static int onionprice=50;
+	static int tomatoprice=25;
+	static int carrotprice=65;
+	static int beansprice=45;
+	static int cabbageprice=40;
+	
+	
+	void bill()
+	{
+		System.out.println("Enter your name");
+		String name=option.next();
+		System.out.println("Enter your phone number");
+		String phno=option.next();
+		System.out.println("Name:"+name);
+		System.out.println("phone number:"+phno);
+	}
+	
+	public void welcome()
+	{
+		   System.out.println("__|___________________________________|__");
+	       System.out.println("  |                                   |  ");
+		   System.out.println("  | * Welcome to SAI Super Market  *  |  ");
+		   System.out.println("  | * place for all your Groceries *  |  ");
+		   System.out.println("__|___________________________________|__");
+           System.out.println("                                    ");
+           startingsection();
+	}
+	void startingsection()
+	{
+		   System.out.println("If you want to check the produts?");
+		   System.out.println("press-1");
+		   System.out.println("If you want to exit?");
+		   System.out.println("press-2");
+		   int press=option.nextInt();
+		   if(press==1)
+		   {
+			   SelectingItems();
+		   }
+		   
+	}
+	void AvailableProducts()
+	{
+		   System.out.println("                              ");
+		   System.out.println("Available products:-          ");
+		   System.out.println("-------------------           ");
+		   System.out.println(" (1) Vegitables               ");
+		   System.out.println(" (2) Fruits                   ");
+		   System.out.println(" (3) Face products            ");
+		   System.out.println(" (4) Shampoos and Hair oils   ");
+		   System.out.println(" (5) Tooth pastes             ");
+		   System.out.println(" (6) Snacks                   ");
+		   System.out.println("                              ");
+		   
+		   startingsection();
+    }
+	
+	void SelectingItems()
+	{
+		   System.out.println("                              ");
+		   System.out.println("Available products:-          ");
+		   System.out.println("-------------------           ");
+		   System.out.println(" (1) Vegitables               ");
+		   System.out.println(" (2) Fruits                   ");
+		   System.out.println(" (3) Face products            ");
+		   System.out.println(" (4) Shampoos and Hair oils   ");
+		   System.out.println(" (5) Tooth pastes             ");
+		   System.out.println(" (6) Snacks                   ");
+		   System.out.println("                              ");
+		   System.out.println("select an option from the above list of items");
+		   int select=option.nextInt();
+		   
+		   switch(select)
+	       {
+	          case 1:
+		         new SuperMarket().Vegetables();
+		         break;
+	          case 2:
+		         new SuperMarket().Fruits();
+		         break;
+	           case 3:
+		         new SuperMarket().FaceProducts();
+		         break;
+	           case 4:
+		         new SuperMarket().Shampoos();
+		         break;
+	           case 5:
+		         new SuperMarket().ToothPastes();
+		         break;
+	           case 6:
+		         new SuperMarket().Snacks();
+		         break;
+		         default:
+		        	 System.out.println("Invalid option");
+	       }	   
+	}
+	void Vegetables()
+	{
+		System.out.println("Available vegetables:-");
+		System.out.println("                                                            ");
+		System.out.println(" product       quantity     price        ");
+		System.out.println("(1)Onions        1kg        Rs.50        ");
+		System.out.println("(2)Tomato        1kg        Rs.25        ");
+		System.out.println("(3)Carrot        1kg        Rs.65        ");
+		System.out.println("(4)Beans         1kg        Rs.45        ");
+		System.out.println("(5)Cabbage       1kg        Rs.40        ");
+		System.out.println("                                                            ");
+		System.out.println("select an option of the product you want to buy ");
+		int select=option.nextInt();
+	    int qty=option.nextInt();
+		
+		
+		if(select==1)
+		{
+			
+			
+			System.out.println("                                                            ");
+			System.out.println("product   quantity   price");
+	        System.out.println(" onion      1kg      Rs.50");
+	        System.out.println("                                                         ");
+	        System.out.println("How many kg's you want to buy");
+	        
+	        System.out.println("you have selected "+qty+" kg's");
+	        
+	        switch(qty)
+	        {
+	        case 1:
+	          System.out.println("                                                       ");
+	          System.out.println("Total cost="+onionprice);	
+	          break;
+	        case 2:
+	            System.out.println("                                                     ");
+	        	System.out.println("Total cost="+(onionprice*qty));
+	           
+	        	
+	        }
+	        System.out.println("Do you want to purchase another item?");
+	        System.out.println("press-1");
+	        System.out.println("                                     ");
+	        System.out.println("Do you want to visit main section");
+	        System.out.println("press-2");
+	        
+	        int other=option.nextInt();
+	        if(other==1)
+	        {
+	        	new SuperMarket().Vegetables();
+	        }
+	        else if(other==2)
+	        {
+	        	new SuperMarket().AvailableProducts();
+	        }
+		}
+		if(select==2)
+		{
+			System.out.println("                                                            ");
+			System.out.println("product   quantity   price");
+	        System.out.println(" Tomato     1kg      Rs.25");
+	        System.out.println("                          ");
+	        System.out.println("How many kg's you want to buy");
+	       
+	        System.out.println("you have selected "+qty+" kg's");
+	       
+	        if(qty==1)
+	        {
+	        	
+	          System.out.println("Total cost="+tomatoprice);	
+	        }
+	        else if(qty>=1)
+	        {
+	        	
+	        	System.out.println("Total cost="+tomatoprice*qty);
+	        }
+	        
+	        System.out.println("Do you want to purchase another item?");
+	        System.out.println("press-1");
+	        System.out.println("                                     ");
+	        System.out.println("Do you want to visit main section");
+	        System.out.println("press-2");
+	        
+	        int other=option.nextInt();
+	        if(other==1)
+	        {
+	        	new SuperMarket().Vegetables();
+	        }
+	        else if(other==2)
+	        {
+	        	new SuperMarket().AvailableProducts();
+	        }
+		}
+		if(select==3)
+		{
+			System.out.println("                                                            ");
+			System.out.println("product   quantity   price");
+	        System.out.println(" Carrot     1kg      Rs.65 ");
+	        System.out.println("                          ");
+	        System.out.println("How many kg's you want to buy");
+	        
+	        System.out.println("you have selected "+qty+" kg's");
+	        
+	        if(qty==1)
+	        {
+	        	
+	          System.out.println("Total cost="+carrotprice);	
+	        }
+	        else if(qty>=1)
+	        {
+	        	
+	        	System.out.println("Total cost="+(carrotprice*qty));
+	        }
+	        
+	        System.out.println("Do you want to purchase another item?");
+	        System.out.println("press-1");
+	        System.out.println("                                     ");
+	        System.out.println("Do you want to visit main section");
+	        System.out.println("press-2");
+	        
+	        int other=option.nextInt();
+	        if(other==1)
+	        {
+	        	new SuperMarket().Vegetables();
+	        }
+	        else if(other==2)
+	        {
+	        	new SuperMarket().AvailableProducts();
+	        }
+		}
+		if(select==4)
+		{
+			System.out.println("                                                            ");
+			
+			System.out.println("product   quantity   price");
+	        System.out.println(" Beans      1kg      Rs.45");
+	        System.out.println("                          ");
+	        System.out.println("How many kg's you want to buy");
+	       
+	        System.out.println("you have selected "+qty+" kg's");
+	        
+	        if(qty==1)
+	        {
+	        	
+	          System.out.println("Total cost="+beansprice);	
+	        }
+	        else if(qty>=1)
+	        {
+	        	System.out.println("Total cost="+(beansprice*qty));
+	        }
+	        
+	        System.out.println("Do you want to purchase another item?");
+	        System.out.println("press-1");
+	        System.out.println("                                     ");
+	        System.out.println("Do you want to visit main section");
+	        System.out.println("press-2");
+	        
+	        int other=option.nextInt();
+	        if(other==1)
+	        {
+	        	new SuperMarket().Vegetables();
+	        }
+	        else if(other==2)
+	        {
+	        	new SuperMarket().AvailableProducts();
+	        }
+		}
+		if(select==5)
+		{
+			System.out.println("product   quantity   price");
+	        System.out.println("Cabbage      1kg     Rs.45");
+	        System.out.println("                          ");
+	        System.out.println("How many kg's you want to buy");
+	        
+	        System.out.println("you have selected "+qty+" kg's");
+	        
+	        if(qty==1)
+	        {
+	          System.out.println("Total cost="+cabbageprice);	
+	        }
+	        else if(qty>=1)
+	        {
+	        	System.out.println("Total cost="+(cabbageprice*qty));
+	        }
+	        
+	        System.out.println("Do you want to purchase another item?");
+	        System.out.println("press-1");
+	        System.out.println("                                     ");
+	        System.out.println("Do you want to visit main section");
+	        System.out.println("press-2");
+	        
+	        int other=option.nextInt();
+	        if(other==1)
+	        {
+	        	new SuperMarket().Vegetables();
+	        }
+	        else if(other==2)
+	        {
+	        	new SuperMarket().AvailableProducts();
+	        }
+		}
+	}
+	
+	void Fruits()
+	{
+		System.out.println("Available Fruits:-");
+		System.out.println("product     quantity     price        ");
+		System.out.println("(1)Apples        1kg        Rs.100       ");
+		System.out.println("(2)Banana       dozen       Rs.60        ");
+		System.out.println("(3)Orange        1kg        Rs.65        ");
+		System.out.println("(4)Mango         1kg        Rs.45        ");
+		System.out.println("(5)Papaya        1kg        Rs.40        ");
+		
+		System.out.println("select an option of the product you want to buy ");
+		int select=option.nextInt();
+		int qty=option.nextInt();
+		int applesprice=100;
+		int bananaprice=60;
+		int orangeprice=65;
+		int mangoprice=45;
+		int papayaprice=40;
+		
+		if(select==1)
+		{
+			System.out.println("product   quantity   price");
+	        System.out.println(" Apples     1kg      Rs.100");
+	        System.out.println("                          ");
+	        System.out.println("How many kg's you want to buy");
+	        
+	        System.out.println("you have selected "+qty+" kg's");
+	        int totalcost1=applesprice;
+	        int totalcost2=applesprice*qty;
+	        if(qty==1)
+	        {
+	          System.out.println("Total cost="+totalcost1);	
+	        }
+	        else if(qty>=1)
+	        {
+	        	System.out.println("Total cost="+totalcost2);
+	        }
+	        
+	        System.out.println("Do you want to purchase another item?");
+	        System.out.println("press-1");
+	        System.out.println("                                     ");
+	        System.out.println("Do you want to visit main section");
+	        System.out.println("press-2");
+	        
+	        int other=option.nextInt();
+	        if(other==1)
+	        {
+	        	new SuperMarket().Fruits();
+	        }
+	        else if(other==2)
+	        {
+	        	new SuperMarket().AvailableProducts();
+	        }
+		}
+		if(select==2)
+		{
+			System.out.println("product   quantity   price");
+	        System.out.println(" Banana     1kg      Rs.60");
+	        System.out.println("                          ");
+	        System.out.println("How many kg's you want to buy");
+	        
+	        System.out.println("you have selected "+qty+" kg's");
+	        int totalcost1=bananaprice;
+	        int totalcost2=bananaprice*qty;
+	        if(qty==1)
+	        {
+	          System.out.println("Total cost="+totalcost1);	
+	        }
+	        else if(qty>=1)
+	        {
+	        	System.out.println("Total cost="+totalcost2);
+	        }
+	        
+	        System.out.println("Do you want to purchase another item?");
+	        System.out.println("press-1");
+	        System.out.println("                                     ");
+	        System.out.println("Do you want to visit main section");
+	        System.out.println("press-2");
+	        
+	        int other=option.nextInt();
+	        if(other==1)
+	        {
+	        	new SuperMarket().Fruits();
+	        }
+	        else if(other==2)
+	        {
+	        	new SuperMarket().AvailableProducts();
+	        }
+		}
+		if(select==3)
+		{
+			System.out.println("product   quantity   price");
+	        System.out.println(" Orange     1kg      Rs.65 ");
+	        System.out.println("                          ");
+	        System.out.println("How many kg's you want to buy");
+	        
+	        System.out.println("you have selected "+qty+" kg's");
+	        int totalcost1=orangeprice;
+	        int totalcost2=orangeprice*qty;
+	        if(qty==1)
+	        {
+	          System.out.println("Total cost="+totalcost1);	
+	        }
+	        else if(qty>=1)
+	        {
+	        	System.out.println("Total cost="+totalcost2);
+	        }
+	        
+	        System.out.println("Do you want to purchase another item?");
+	        System.out.println("press-1");
+	        System.out.println("                                     ");
+	        System.out.println("Do you want to visit main section");
+	        System.out.println("press-2");
+	        
+	        int other=option.nextInt();
+	        if(other==1)
+	        {
+	        	new SuperMarket().Fruits();
+	        }
+	        else if(other==2)
+	        {
+	        	new SuperMarket().AvailableProducts();
+	        }
+		}
+		if(select==4)
+		{
+			System.out.println("product   quantity   price");
+	        System.out.println(" Mango      1kg      Rs.45");
+	        System.out.println("                          ");
+	        System.out.println("How many kg's you want to buy");
+	        
+	        System.out.println("you have selected "+qty+" kg's");
+	        int totalcost1=mangoprice;
+	        int totalcost2=mangoprice*qty;
+	        if(qty==1)
+	        {
+	          System.out.println("Total cost="+totalcost1);	
+	        }
+	        else if(qty>=1)
+	        {
+	        	System.out.println("Total cost="+totalcost2);
+	        }
+	        
+	        System.out.println("Do you want to purchase another item?");
+	        System.out.println("press-1");
+	        System.out.println("                                     ");
+	        System.out.println("Do you want to visit main section");
+	        System.out.println("press-2");
+	        
+	        int other=option.nextInt();
+	        if(other==1)
+	        {
+	        	new SuperMarket().Fruits();
+	        }
+	        else if(other==2)
+	        {
+	        	new SuperMarket().AvailableProducts();
+	        }
+		}
+		if(select==5)
+		{
+			System.out.println("product   quantity   price");
+	        System.out.println(" Papaya      1kg     Rs.40");
+	        System.out.println("                          ");
+	        System.out.println("How many kg's you want to buy");
+	      
+	        System.out.println("you have selected "+qty+" kg's");
+	        int totalcost1=papayaprice;
+	        int totalcost2=papayaprice*qty;
+	        if(qty==1)
+	        {
+	          System.out.println("Total cost="+totalcost1);	
+	        }
+	        else if(qty>=1)
+	        {
+	        	System.out.println("Total cost="+totalcost2);
+	        }
+	        
+	        System.out.println("Do you want to purchase another item?");
+	        System.out.println("press-1");
+	        System.out.println("                                     ");
+	        System.out.println("Do you want to visit main section");
+	        System.out.println("press-2");
+	        
+	        int other=option.nextInt();
+	        if(other==1)
+	        {
+	        	new SuperMarket().Fruits();
+	        }
+	        else if(other==2)
+	        {
+	        	new SuperMarket().AvailableProducts();
+	        }
+		}
+	}
+	
+	void FaceProducts()
+	{
+		System.out.println("Available Products:-");
+		System.out.println("product                         price        ");
+		System.out.println("(1)Himalaya Face wash              Rs.200       ");
+		System.out.println("(2)Nivia men Face wash             Rs.240       ");
+		System.out.println("(3)Santoor Soap                    Rs.25        ");
+		System.out.println("(4)Mysore sandal soap              Rs.50        ");
+		System.out.println("(5)Fair and lovely face cream      Rs.40        ");
+		
+		System.out.println("select an option of the product you want to buy ");
+		int select=option.nextInt();
+		int qty=option.nextInt();
+		int himalayafacewashprice=200;
+		int niviafacewashprice=240;
+		int santoorprice=50;
+		int mysoresandalprice=50;
+		int fairandlovelyprice=40;
+		if(select==1)
+		{
+			System.out.println("     product                     price");
+	        System.out.println(" Himalaya Face wash              Rs.200");
+	        System.out.println("                          ");
+	        System.out.println("How many items you want to buy");
+	        
+	        System.out.println("you have selected "+qty+" items");
+	        int totalcost1=himalayafacewashprice;
+	        int totalcost2=himalayafacewashprice*qty;
+	        if(qty==1)
+	        {
+	          System.out.println("Total cost="+totalcost1);	
+	        }
+	        else if(qty>=1)
+	        {
+	        	System.out.println("Total cost="+totalcost2);
+	        }
+	        
+	        System.out.println("Do you want to purchase another item?");
+	        System.out.println("press-1");
+	        System.out.println("                                     ");
+	        System.out.println("Do you want to visit main section");
+	        System.out.println("press-2");
+	        
+	        int other=option.nextInt();
+	        if(other==1)
+	        {
+	        	new SuperMarket().FaceProducts();
+	        }
+	        else if(other==2)
+	        {
+	        	new SuperMarket().AvailableProducts();
+	        }
+		}
+		if(select==2)
+		{
+			System.out.println("       product                   price");
+	        System.out.println(" Nivia men Face wash             Rs.240");
+	        System.out.println("                          ");
+	        System.out.println("How many items you want to buy");
+	        
+	        System.out.println("you have selected "+qty+" items");
+	        int totalcost1=niviafacewashprice;
+	        int totalcost2=niviafacewashprice*qty;
+	        if(qty==1)
+	        {
+	          System.out.println("Total cost="+totalcost1);	
+	        }
+	        else if(qty>=1)
+	        {
+	        	System.out.println("Total cost="+totalcost2);
+	        }
+	        
+	        System.out.println("Do you want to purchase another item?");
+	        System.out.println("press-1");
+	        System.out.println("                                     ");
+	        System.out.println("Do you want to visit main section");
+	        System.out.println("press-2");
+	        
+	        int other=option.nextInt();
+	        if(other==1)
+	        {
+	        	new SuperMarket().FaceProducts();
+	        }
+	        else if(other==2)
+	        {
+	        	new SuperMarket().AvailableProducts();
+	        }
+		}
+		if(select==3)
+		{
+			System.out.println("       product                   price");
+	        System.out.println("    Santoor Soap                 Rs.25");
+	        System.out.println("                          ");
+	        System.out.println("How many soaps you want to buy");
+	       
+	        System.out.println("you have selected "+qty+" soaps");
+	        int totalcost1=santoorprice;
+	        int totalcost2=santoorprice*qty;
+	        if(qty==1)
+	        {
+	          System.out.println("Total cost="+totalcost1);	
+	        }
+	        else if(qty>=1)
+	        {
+	        	System.out.println("Total cost="+totalcost2);
+	        }
+	        
+	        System.out.println("Do you want to purchase another item?");
+	        System.out.println("press-1");
+	        System.out.println("                                     ");
+	        System.out.println("Do you want to visit main section");
+	        System.out.println("press-2");
+	        
+	        int other=option.nextInt();
+	        if(other==1)
+	        {
+	        	new SuperMarket().FaceProducts();
+	        }
+	        else if(other==2)
+	        {
+	        	new SuperMarket().AvailableProducts();
+	        }
+		}
+		if(select==4)
+		{
+			System.out.println("       product                   price");
+	        System.out.println(" Mysore sandal soap              Rs.50");
+	        System.out.println("                          ");
+	        System.out.println("How many soaps you want to buy");
+	        
+	        System.out.println("you have selected "+qty+" soaps");
+	        int totalcost1=mysoresandalprice;
+	        int totalcost2=mysoresandalprice*qty;
+	        if(qty==1)
+	        {
+	          System.out.println("Total cost="+totalcost1);	
+	        }
+	        else if(qty>=1)
+	        {
+	        	System.out.println("Total cost="+totalcost2);
+	        }
+	        
+	        System.out.println("Do you want to purchase another item?");
+	        System.out.println("press-1");
+	        System.out.println("                                     ");
+	        System.out.println("Do you want to visit main section");
+	        System.out.println("press-2");
+	        
+	        int other=option.nextInt();
+	        if(other==1)
+	        {
+	        	new SuperMarket().FaceProducts();
+	        }
+	        else if(other==2)
+	        {
+	        	new SuperMarket().AvailableProducts();
+	        }
+		}
+		if(select==5)
+		{
+			System.out.println("       product                   price");
+	        System.out.println("Fair and lovely face cream       Rs.40");
+	        System.out.println("                          ");
+	        System.out.println("How many creams you want to buy");
+	        
+	        System.out.println("you have selected "+qty+" creams");
+	        int totalcost1=fairandlovelyprice;
+	        int totalcost2=fairandlovelyprice*qty;
+	        if(qty==1)
+	        {
+	          System.out.println("Total cost="+totalcost1);	
+	        }
+	        else if(qty>=1)
+	        {
+	        	System.out.println("Total cost="+totalcost2);
+	        }
+	        
+	        System.out.println("Do you want to purchase another item?");
+	        System.out.println("press-1");
+	        System.out.println("                                     ");
+	        System.out.println("Do you want to visit main section");
+	        System.out.println("press-2");
+	        
+	        int other=option.nextInt();
+	        if(other==1)
+	        {
+	        	new SuperMarket().FaceProducts();
+	        }
+	        else if(other==2)
+	        {
+	        	new SuperMarket().AvailableProducts();
+	        }
+		}
+	} 
+	
+	void Shampoos()
+	{
+		System.out.println("Available Shampoos:-");
+		System.out.println("Product                      price       ");
+		System.out.println("(1)Dove                      Rs.180      ");
+		System.out.println("(2)Head and Shoulders        Rs.210      ");
+		System.out.println("(3)Clinik Plus               Rs.150      ");
+		System.out.println("(4)Chik                      Rs.160      ");
+		
+		System.out.println("select an option of the product you want to buy ");
+		int select=option.nextInt();
+		int qty=option.nextInt();
+		int doveprice=180;
+		int headandshoulderprice=210;
+		int clinikplusprice=150;
+		int chikprice=160;
+		if(select==1)
+		{
+			System.out.println("     Product                    price");
+			System.out.println("      Dove                      Rs.180");
+			System.out.println("                          ");
+	        System.out.println("How many shampoos you want to buy");
+	     
+	        System.out.println("you have selected "+qty+" shampoos");
+	        int totalcost1=doveprice;
+	        int totalcost2=doveprice*qty;
+	        if(qty==1)
+	        {
+	          System.out.println("Total cost="+totalcost1);	
+	        }
+	        else if(qty>=1)
+	        {
+	        	System.out.println("Total cost="+totalcost2);
+	        }
+	        
+	        System.out.println("Do you want to purchase another item?");
+	        System.out.println("press-1");
+	        System.out.println("                                     ");
+	        System.out.println("Do you want to visit main section");
+	        System.out.println("press-2");
+	        
+	        int other=option.nextInt();
+	        if(other==1)
+	        {
+	        	new SuperMarket().Shampoos();
+	        }
+	        else if(other==2)
+	        {
+	        	new SuperMarket().AvailableProducts();
+	        }
+		}
+		if(select==2)
+		{
+			System.out.println("     Product                    price");
+			System.out.println("Head and Shoulders              Rs.210  ");
+			System.out.println("                          ");
+	        System.out.println("How many shampoos you want to buy");
+	       
+	        System.out.println("you have selected "+qty+" shampoos");
+	        int totalcost1=headandshoulderprice;
+	        int totalcost2=headandshoulderprice*qty;
+	        if(qty==1)
+	        {
+	          System.out.println("Total cost="+totalcost1);	
+	        }
+	        else if(qty>=1)
+	        {
+	        	System.out.println("Total cost="+totalcost2);
+	        }
+	        
+	        System.out.println("Do you want to purchase another item?");
+	        System.out.println("press-1");
+	        System.out.println("                                     ");
+	        System.out.println("Do you want to visit main section");
+	        System.out.println("press-2");
+	        
+	        int other=option.nextInt();
+	        if(other==1)
+	        {
+	        	new SuperMarket().Shampoos();
+	        }
+	        else if(other==2)
+	        {
+	        	new SuperMarket().AvailableProducts();
+	        }
+		}
+		if(select==3)
+		{
+			System.out.println("     Product                    price");
+			System.out.println("   Clinik Plus                  Rs.150");
+			System.out.println("                          ");
+	        System.out.println("How many shampoos you want to buy");
+	      
+	        System.out.println("you have selected "+qty+" shampoos");
+	        int totalcost1=clinikplusprice;
+	        int totalcost2=clinikplusprice*qty;
+	        if(qty==1)
+	        {
+	          System.out.println("Total cost="+totalcost1);	
+	        }
+	        else if(qty>=1)
+	        {
+	        	System.out.println("Total cost="+totalcost2);
+	        }
+	        
+	        System.out.println("Do you want to purchase another item?");
+	        System.out.println("press-1");
+	        System.out.println("                                     ");
+	        System.out.println("Do you want to visit main section");
+	        System.out.println("press-2");
+	        
+	        int other=option.nextInt();
+	        if(other==1)
+	        {
+	        	new SuperMarket().Shampoos();
+	        }
+	        else if(other==2)
+	        {
+	        	new SuperMarket().AvailableProducts();
+	        }
+		}
+		if(select==4)
+		{
+			System.out.println("     Product                    price");
+			System.out.println("      Chik                      Rs.160");
+			System.out.println("How many shampoos you want to buy");
+	  
+	        System.out.println("you have selected "+qty+" shampoos");
+	        int totalcost1=chikprice;
+	        int totalcost2=chikprice*qty;
+	        if(qty==1)
+	        {
+	          System.out.println("Total cost="+totalcost1);	
+	        }
+	        else if(qty>=1)
+	        {
+	        	System.out.println("Total cost="+totalcost2);
+	        }
+	        
+	        System.out.println("Do you want to purchase another item?");
+	        System.out.println("press-1");
+	        System.out.println("                                     ");
+	        System.out.println("Do you want to visit main section");
+	        System.out.println("press-2");
+	        
+	        int other=option.nextInt();
+	        if(other==1)
+	        {
+	        	new SuperMarket().Shampoos();
+	        }
+	        else if(other==2)
+	        {
+	        	new SuperMarket().AvailableProducts();
+	        }
+		}
+	}
+	
+	void ToothPastes()
+	{
+		System.out.println("Available Tooth Pastes:-");
+		System.out.println("product                price     ");
+		System.out.println("(1)Colgate                Rs.100    ");
+		System.out.println("(2)Pepsodent              Rs.80     ");
+		System.out.println("(3)Dabour Red             Rs.120    ");
+		System.out.println("(4)Close Up               Rs.100    ");
+		
+		System.out.println("select an option of the product you want to buy ");
+		int select=option.nextInt();
+		int qty=option.nextInt();
+		int colgateprice=100;
+		int pepsodentprice=80;
+		int dabourredprice=120;
+		int closeuprice=100;
+		if(select==1)
+		{
+			System.out.println("   Product                price");
+			System.out.println("   Colgate                Rs.100");
+			System.out.println("How many pastes you want to buy");
+	      
+	        System.out.println("you have selected "+qty+" pastes");
+	        int totalcost1=colgateprice;
+	        int totalcost2=colgateprice*qty;
+	        if(qty==1)
+	        {
+	          System.out.println("Total cost="+totalcost1);	
+	        }
+	        else if(qty>=1)
+	        {
+	        	System.out.println("Total cost="+totalcost2);
+	        }
+	        
+	        System.out.println("Do you want to purchase another item?");
+	        System.out.println("press-1");
+	        System.out.println("                                     ");
+	        System.out.println("Do you want to visit main section");
+	        System.out.println("press-2");
+	        
+	        int other=option.nextInt();
+	        if(other==1)
+	        {
+	        	new SuperMarket().ToothPastes();
+	        }
+	        else if(other==2)
+	        {
+	        	new SuperMarket().AvailableProducts();
+	        }
+		}
+		if(select==2)
+		{
+			System.out.println("   Product                price");
+			System.out.println("  Pepsodent               Rs.80  ");
+			System.out.println("How many pastes you want to buy");
+	    
+	        System.out.println("you have selected "+qty+" pastes");
+	        int totalcost1=pepsodentprice;
+	        int totalcost2=pepsodentprice*qty;
+	        if(qty==1)
+	        {
+	          System.out.println("Total cost="+totalcost1);	
+	        }
+	        else if(qty>=1)
+	        {
+	        	System.out.println("Total cost="+totalcost2);
+	        }
+	        
+	        System.out.println("Do you want to purchase another item?");
+	        System.out.println("press-1");
+	        System.out.println("                                     ");
+	        System.out.println("Do you want to visit main section");
+	        System.out.println("press-2");
+	        
+	        int other=option.nextInt();
+	        if(other==1)
+	        {
+	        	new SuperMarket().ToothPastes();
+	        }
+	        else if(other==2)
+	        {
+	        	new SuperMarket().AvailableProducts();
+	        }
+		}
+		if(select==3)
+		{
+			System.out.println("   Product                price");
+			System.out.println("  Dabour Red              Rs.120");
+			System.out.println("How many pastes you want to buy");
+	     
+	        System.out.println("you have selected "+qty+" pastes");
+	        int totalcost1=dabourredprice;
+	        int totalcost2=dabourredprice*qty;
+	        if(qty==1)
+	        {
+	          System.out.println("Total cost="+totalcost1);	
+	        }
+	        else if(qty>=1)
+	        {
+	        	System.out.println("Total cost="+totalcost2);
+	        }
+	        
+	        System.out.println("Do you want to purchase another item?");
+	        System.out.println("press-1");
+	        System.out.println("                                     ");
+	        System.out.println("Do you want to visit main section");
+	        System.out.println("press-2");
+	        
+	        int other=option.nextInt();
+	        if(other==1)
+	        {
+	        	new SuperMarket().ToothPastes();
+	        }
+	        else if(other==2)
+	        {
+	        	new SuperMarket().AvailableProducts();
+	        }
+		}
+		if(select==4)
+		{
+			System.out.println("   Product                price");
+			System.out.println("   Close Up               Rs.100");
+			
+			System.out.println("How many pastes you want to buy");
+	    
+	        System.out.println("you have selected "+qty+" pastes");
+	        int totalcost1=closeuprice;
+	        int totalcost2=closeuprice*qty;
+	        if(qty==1)
+	        {
+	          System.out.println("Total cost="+totalcost1);	
+	        }
+	        else if(qty>=1)
+	        {
+	        	System.out.println("Total cost="+totalcost2);
+	        }
+	        
+	        System.out.println("Do you want to purchase another item?");
+	        System.out.println("press-1");
+	        System.out.println("                                     ");
+	        System.out.println("Do you want to visit main section");
+	        System.out.println("press-2");
+	        
+	        int other=option.nextInt();
+	        if(other==1)
+	        {
+	        	new SuperMarket().ToothPastes();
+	        }
+	        else if(other==2)
+	        {
+	        	new SuperMarket().AvailableProducts();
+	        }
+		}
+	}
+	
+	void Snacks()
+	{
+		System.out.println("Available Products:-");
+		System.out.println("product                        price    ");
+		System.out.println("(1)Dairy milk silk                Rs.200   ");
+		System.out.println("(2)KitKat                         Rs.100   ");
+		System.out.println("(3)Good Day busicuit              Rs.50    ");
+		System.out.println("(4)Lays                           Rs.20    ");
+		
+		System.out.println("select an option of the product you want to buy ");
+		int select=option.nextInt();
+		int qty=option.nextInt();
+		int dairymilkprice=200;
+		int kitkatprice=100;
+		int gooddayprice=50;
+	    int laysprice=20;
+		if(select==1)
+		{
+			System.out.println("    Product                price");
+			System.out.println(" Dairy milk silk           Rs.200");
+			
+			System.out.println("How many choclates you want to buy");
+	  
+	        System.out.println("you have selected "+qty+" choclates");
+	        if(qty==1)
+	        {
+	          System.out.println("Total cost="+dairymilkprice);	
+	        }
+	        else if(qty>=1)
+	        {
+	        	System.out.println("Total cost="+(dairymilkprice*qty));
+	        }
+	        
+	        System.out.println("Do you want to purchase another item?");
+	        System.out.println("press-1");
+	        System.out.println("                                     ");
+	        System.out.println("Do you want to visit main section");
+	        System.out.println("press-2");
+	        
+	        int other=option.nextInt();
+	        if(other==1)
+	        {
+	        	new SuperMarket().Snacks();
+	        }
+	        else if(other==2)
+	        {
+	        	new SuperMarket().AvailableProducts();
+	        }
+		}
+		if(select==2)
+		{
+			System.out.println("    Product                price");
+			System.out.println("    KitKat                 Rs.100   ");
+			
+			System.out.println("How many choclates you want to buy");
+	
+	        System.out.println("you have selected "+qty+" choclates");
+	        if(qty==1)
+	        {
+	          System.out.println("Total cost="+kitkatprice);	
+	        }
+	        else if(qty>=1)
+	        {
+	        	System.out.println("Total cost="+(kitkatprice*qty));
+	        }
+	        
+	        System.out.println("Do you want to purchase another item?");
+	        System.out.println("press-1");
+	        System.out.println("                                     ");
+	        System.out.println("Do you want to visit main section");
+	        System.out.println("press-2");
+	        
+	        int other=option.nextInt();
+	        if(other==1)
+	        {
+	        	new SuperMarket().Snacks();
+	        }
+	        else if(other==2)
+	        {
+	        	new SuperMarket().AvailableProducts();
+	        }
+		}
+		if(select==3)
+		{
+			System.out.println("    Product                price");
+			System.out.println("Good Day busicuit          Rs.50 ");
+			
+			System.out.println("How many buscuits you want to buy");
+	
+	        System.out.println("you have selected "+qty+" buscuits");
+	        if(qty==1)
+	        {
+	          System.out.println("Total cost="+gooddayprice);	
+	        }
+	        else if(qty>=1)
+	        {
+	        	System.out.println("Total cost="+(gooddayprice*qty));
+	        }
+	        
+	        System.out.println("Do you want to purchase another item?");
+	        System.out.println("press-1");
+	        System.out.println("                                     ");
+	        System.out.println("Do you want to visit main section");
+	        System.out.println("press-2");
+	        
+	        int other=option.nextInt();
+	        if(other==1)
+	        {
+	        	new SuperMarket().Snacks();
+	        }
+	        else if(other==2)
+	        {
+	        	new SuperMarket().AvailableProducts();
+	        }
+		}
+		if(select==4)
+		{
+			System.out.println("    Product                price");
+			System.out.println("     Lays                  Rs.20");
+			
+			System.out.println("How many packets you want to buy");
+	 
+	        System.out.println("you have selected "+qty+" packets");
+	        if(qty==1)
+	        {
+	          System.out.println("Total cost="+laysprice);	
+	        }
+	        else if(qty>=1)
+	        {
+	        	System.out.println("Total cost="+(laysprice*qty));
+	        }
+	        
+	        System.out.println("Do you want to purchase another item?");
+	        System.out.println("press-1");
+	        System.out.println("                                     ");
+	        System.out.println("Do you want to visit main section");
+	        System.out.println("press-2");
+	        
+	        int other=option.nextInt();
+	        if(other==1)
+	        {
+	        	new SuperMarket().Snacks();
+	        }
+	        else if(other==2)
+	        {
+	        	new SuperMarket().AvailableProducts();
+	        }
+		}
+		
+	}
+    public static void main(String[] args) 
+    {
+    	SuperMarket supmart=new SuperMarket();
+    	supmart.welcome();
+    	supmart.bill();
+    	System.out.println("Thank you");
+    	
+    }	   
+}
